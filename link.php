@@ -20,6 +20,7 @@
     </p>
     <a href="<?php echo $_GET["url"] ?>">Continue</a>
     </div>
+    <a href="https://stats.uptimerobot.com/XXPxmf4P2w" style="color: gray;">Status</a>&nbsp;<a href="https://que.jacobdrath.co/pages/security.html" style="color: gray;">Security</a>&nbsp;<a href="https://que.jacobdrath.co/pages/providers.html" style="color: gray;">Our providers</a>
 </center>
 </body>
 </html>
