@@ -12,13 +12,13 @@
   <body>
     <center>
       <br><br>
-<div style="background-color: white; border-radius: 10px;">
+<div style="background-color: white; border-radius: 10px; width: fit-content;">
 <h1>Please Verify</h1>
 <p>In order to keep Que secure, we require new users to complete human verification.</p>
     <form action="verify.php" method="POST">
       <div class="g-recaptcha" data-sitekey="6LfB4ckfAAAAAJH3qOotGiFW1Munvvy_o9hC_8AU"></div>
       <br/>
-      <input type="submit" value="Submit">
+      <input type="submit" value="Submit" id="sub_but">
     </form>
 </div>
     </center>
@@ -29,5 +29,11 @@
         color: black;
         font-family: 'Open Sans', sans-serif;
         }
+        #sub_but {
+          padding: 8px;
+          border-radius: 10px;
+          background: rgb(178,82,245);
+          background: linear-gradient(90deg, rgba(178,82,245,1) 0%, rgba(112,62,222,1) 35%, rgba(0,212,255,1) 100%);
+          }
   </style>
 </html>
