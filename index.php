@@ -57,6 +57,13 @@
     <script src="status.js"></script>
     <script src="response.js"></script>
     <script src="chat.js"></script>
+    <?php
+if ($_GET['q']=="") {
+  
+} else {
+  echo "<script>send(" . $_GET['q'] . ")</script>"
+}
+    ?>
 </body>
 <style>
     #main {
