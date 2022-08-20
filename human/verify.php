@@ -42,7 +42,7 @@ $result = curl_exec($ch);
 echo $result;
 if (isJson($result)) {
     $manage = json_decode($result);
-    if ($manage.success) {
+    if ($manage->success) {
         echo 'Success';
     }
 }
