@@ -1,5 +1,7 @@
 if (!(localStorage.ver=="1")) {
-  window.location.href="https://que.jacobdrath.co/human/"
+  if (!(window.location.href.includes("?q=")) {
+      window.location.href="https://que.jacobdrath.co/human/"
+  }
 }
 
 
