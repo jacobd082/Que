@@ -12,7 +12,7 @@
   <body>
     <center>
       <br><br>
-<div style="background-color: white; border-radius: 10px; width: fit-content;">
+<div style="background-color: white; border-radius: 10px; width: fit-content; padding: 15px;">
 <h1>Please Verify</h1>
 <p>In order to keep Que secure, we require new users to complete human verification.</p>
     <form action="verify.php" method="POST">
@@ -30,6 +30,7 @@
         font-family: 'Open Sans', sans-serif;
         }
         #sub_but {
+          border: none;
           padding: 8px;
           border-radius: 10px;
           background: rgb(178,82,245);
