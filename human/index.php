@@ -11,7 +11,9 @@
   </head>
   <body>
     <center>
-      <br><br>
+      <br>
+      <img src="https://que.jacobdrath.co/logo.png" width="100px">
+      <br>
 <div style="background-color: white; border-radius: 10px; width: fit-content; padding: 15px;">
 <h1>Please Verify</h1>
 <p>In order to keep Que secure, we require new users to complete human verification.</p>
