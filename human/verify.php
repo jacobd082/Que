@@ -13,9 +13,11 @@ $url = 'https://www.google.com/recaptcha/api/siteverify';
 
 //The data you want to send via POST
 $fields = [
-    'response'      => $_POST['response'],
+    'response'      => $_POST['g-recaptcha-response'],
     'secret' => '6LfB4ckfAAAAANmItrzwta9-6SODkowTsoqGpPSo'
 ];
+
+echo $_POST['g-recaptcha-response'];
 
 //url-ify the data for the POST
 $fields_string = http_build_query($fields);
