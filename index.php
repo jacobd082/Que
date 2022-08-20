@@ -61,7 +61,7 @@
 if ($_GET['q']=="") {
   
 } else {
-  echo "<script>send(" . $_GET['q'] . ")</script>";
+  echo "<script>send('" . $_GET['q'] . "')</script>";
 }
     ?>
 </body>
