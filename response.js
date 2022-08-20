@@ -192,6 +192,6 @@ function handWX(w) {
 
 function handle(txt, title) {
     newMsg(txt, "in")
-    newMsg("<center>Source: <a href=\"https://wikipedia.org\">Wikipedia</a></center>", "alert")
+    newMsg("<center>Source: <a href=\"https://wikipedia.org"+title+"\">Wikipedia</a></center>", "alert")
     document.body.scrollIntoView(0)
 }
