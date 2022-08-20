@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>reCAPTCHA</title>
+    <title>Que</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
