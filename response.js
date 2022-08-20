@@ -134,9 +134,27 @@ function getResponse(msg) {
       "Your welcome!"
     ]
   }
+  else if (msg == "que") {
+    return [
+      "Thant's me!",
+      "Can I help you with anything?"
+    ]
+  }
+  else if (msg == "ok" || msg == "okay") {
+    newMsg("<center>How is your experience with Que? <a href=\"javascript:alert('Thanks for your feedback!')\">Good</a> <a href=\"javascript:alert('Thanks for your feedback!')\">Bad</a></center>", "alert")
+    return [
+      "Happy to help!"
+    ]
+  }
+  else if (msg.split(" ").includes("you") && msg.split(" ").includes("who")) {
+    return [
+      "Hi! I'm Que!",
+      "If you need any help, just ask!"
+    ]
+  }
   else {
     return [
-      "Sorry I'm not sure what you are asking me.",
+      "Sorry, I'm not sure what you are asking me.",
       "Try to use simple words and to not be to specific.",
       "Remember, I'm only in the Beta stages, and cannot do very much.",
     ];
