@@ -67,7 +67,7 @@ function getResponse(msg) {
         "Hello!"
     ]
   }
-  else if (msg == "help") {
+  else if ((msg == "help") || (msg.split(" ").includes("help") && msg.split(" ").length < 4)) {
     return [
         "What can I help you with?",
         "If you want to know what I can do, Ask me."
@@ -115,10 +115,11 @@ function getResponse(msg) {
         "If at any point you want to end the conversation, say \"Bye\"."
     ]
   }
-  else if ((msg.split(" ").includes("you") && msg.includes("oing")) || (msg == "whats up") || (msg == "what's up")) {
+  else if ((msg.split(" ").includes("you") && msg.includes("oing")) || (msg == "whats up") || (msg == "what's up") || msg=="how are you") {
     return [
         "I'm doing fine!",
-        "Thanks for asking!"
+        "Thanks for asking!",
+        "<img src='logo.png' width='50px'><b>All systems online</b>"
     ]
   }
   else if (msg == "##error") {
@@ -126,6 +127,12 @@ function getResponse(msg) {
         sat("error")
     }, 200)
     return []
+  }
+  else if (msg=="thanks" || msg=="thank you" || msg=="thx") {
+    newMsg("<center>How is your experience with Que? <a href=\"javascript:alert('Thanks for your feedback!')\">Good</a> <a href=\"javascript:alert('Thanks for your feedback!')\">Bad</a></center>", "alert")
+    return [
+      "Your welcome!"
+    ]
   }
   else {
     return [
