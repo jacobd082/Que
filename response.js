@@ -160,11 +160,6 @@ function getResponse(msg) {
       "You can run your own google search&nbsp;<a href='https://google.com' target='_blank'>here</a>."
     ]
   }
-  else if (msg == "##cloud") {
-    return [
-      "<img src='https://openweathermap.org/img/wn/04d@2x.png'>"
-    ]
-  }
   else {
     return [
       "Sorry, I'm not sure what you are asking me.",
