@@ -8,7 +8,7 @@ function getResponse(msg) {
   msg = msg.replace(".", "")
   msg = msg.toLowerCase();
   if (msg.split(" ").includes("hi") || msg.split(" ").includes("hello")) {
-    if (msg.split(" ").length < 5) {
+    if (msg.split(" ").length < 4) {
       return [
         "Hello there! I'm Que!",
         "I'm an AI assistant made to help you!",
