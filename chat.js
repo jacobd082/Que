@@ -17,7 +17,9 @@ function send(msg) {
 
 function newMsg(txt, cssclass) {
     if (txt.includes("https://")) {
-      txt = txt.replace("https://", "link.php?url=https://")
+      if (!txt.includes("img")) {
+        txt = txt.replace("https://", "link.php?url=https://")
+      }
     }
     document.getElementById("chat").innerHTML += "<p class="+cssclass+">"+txt+"</p>"
 }

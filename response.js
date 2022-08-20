@@ -12,7 +12,8 @@ function getResponse(msg) {
       return [
         "Hello there! I'm Que!",
         "I'm an AI assistant made to help you!",
-        "Try asking me:<br>What\'s the weather?"
+        "Try asking me:<br>What\'s the weather?",
+        "Or: What's a pineapple?"
       ];
     } else {
       return getResponse(after(" ", msg));
@@ -73,7 +74,7 @@ function getResponse(msg) {
         "If you want to know what I can do, Ask me."
     ]
   }
-  else if (msg.startsWith("what is") || msg.startsWith("who is")) {
+  else if (msg.startsWith("what is") || msg.startsWith("who is") || msg.replace("'", "").startsWith("whats")) {
     if (msg.split(" ").includes("a")) {
         url = msg.split(" ")[3]
     } else {
@@ -112,6 +113,7 @@ function getResponse(msg) {
         "To name a few things I can do:",
         "I can tell you the weather!",
         "I can have a basic conversation!",
+        "I can do research for you!",
         "If at any point you want to end the conversation, say \"Bye\"."
     ]
   }
@@ -158,6 +160,11 @@ function getResponse(msg) {
       "You can run your own google search&nbsp;<a href='https://google.com' target='_blank'>here</a>."
     ]
   }
+  else if (msg == "##cloud") {
+    return [
+      "<img src='https://openweathermap.org/img/wn/04d@2x.png'>"
+    ]
+  }
   else {
     return [
       "Sorry, I'm not sure what you are asking me.",
@@ -171,7 +178,7 @@ function getResponse(msg) {
 function handWX(w) {
         newMsg("I found your location to be "+w.loc, "in")
         newMsg("Here is your weather:", "in")
-        newMsg("<img src='http://openweathermap.org/img/wn/"+w.icon+"@2x.png'>", "in")
+        newMsg("<img src='https://openweathermap.org/img/wn/"+w.icon+"@2x.png'>", "in")
         newMsg("The current condition is "+w.cond +". The current temperature is "+ w.temp + " fahrenheit.", "in")
         newMsg("<center>Was there an issue with your weather? <a href=\"javascript:alert('Thanks for your feedback!')\">Nope!</a> <a href=\"javascript:alert('Thanks for your feedback!')\">Yes</a></center>", "alert")
         document.body.scrollIntoView(0)
