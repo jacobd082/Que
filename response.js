@@ -154,6 +154,10 @@ function getResponse(msg) {
       "If you need any help, just ask!"
     ]
   }
+  else if (msg.split(" ").includes("not") && (msg.split(" ").includes("wanted") || msg.split(" ").includes("needed") || msg.split(" ").includes("asked"))) {
+    requestFeedback()
+    return []
+  }
   else if (msg.split(" ")[0]=="google") {
     return [
       "Sorry! As of now, I cannot Google things for you.",
@@ -169,6 +173,10 @@ function getResponse(msg) {
   }
 }
 
+function requestFeedback() {
+  newMsg("Is something wrong? Let us know <a href='report.php'>here</a>.")
+  document.body.scrollIntoView(0)
+}
 
 function handWX(w) {
         newMsg("I found your location to be "+w.loc, "in")
