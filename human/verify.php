@@ -17,8 +17,6 @@ $fields = [
     'secret' => '6LfB4ckfAAAAANmItrzwta9-6SODkowTsoqGpPSo'
 ];
 
-echo $_POST['g-recaptcha-response'];
-
 //url-ify the data for the POST
 $fields_string = http_build_query($fields);
 
@@ -36,6 +34,10 @@ curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 //execute post
 $result = curl_exec($ch);
 echo $result;
+if (str_starts_with(string $result, string '{ "success": true'): bool) {
+    echo 'Success!'
+    echo '<script>window.close()</script>'
+};
 ?>
 </body>
 </html>
