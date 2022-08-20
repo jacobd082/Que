@@ -34,9 +34,9 @@ curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 //execute post
 $result = curl_exec($ch);
 echo $result;
-if (str_starts_with(string $result, string '{ "success": true'): bool) {
+$manage = json_decode($result)
+if ($manage.success) {
     echo 'Success!';
-    echo '<script>window.close()</script>';
 };
 ?>
 </body>
