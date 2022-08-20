@@ -12,7 +12,8 @@
   <body>
     <center>
       <br>
-      <img src="https://que.jacobdrath.co/logo.png" width="100px">
+      <img src="https://que.jacobdrath.co/logo.png" width="80px">
+      <br>
       <br>
 <div style="background-color: white; border-radius: 10px; width: fit-content; padding: 15px;">
 <h1>Please Verify</h1>

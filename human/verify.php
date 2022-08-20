@@ -47,7 +47,7 @@ if (isJson($result)) {
         echo '<script>window.location.href="https://que.jacobdrath.co"</script>';
     } else {
         echo 'Please try again';
-        echo '<script>window.navigator.back()</script>';
+        echo '<script>history.back()</script>';
     }
 }
 ?>
