@@ -1,4 +1,5 @@
 <html>
+  <!-- curl $REPLIT_DB_URL/q -->
   <body>
     <?php
 
@@ -7,7 +8,7 @@ $url = 'https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI
 
 //The data you want to send via POST
 $fields = [
-    'q{rand()}'      => $_POST['txt']
+    'q'      => $_POST['txt']
 ];
 
 //url-ify the data for the POST
@@ -27,6 +28,7 @@ curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 //execute post
 $result = curl_exec($ch);
 echo $result;
+echo '<center><img src="https://que.jacobdrath.co/logo.png" width="80px"><br><h1>Response submitted.</h1><p>Thank you for your feedback.</p></center>';
 /*
       // create curl resource 
         $ch = curl_init(); 

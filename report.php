@@ -13,7 +13,7 @@
       <img src="https://que.jacobdrath.co/logo.png" width="80px">
       <h1>Report an issue</h1>
       <form action="submit-report.php" method="post">
-        <textarea id="txt" name=txt placeholder="Type your issue here."></textarea>
+        <textarea id="txt" style="width: 400px; height: 200px;" name=txt placeholder="Type your issue here."></textarea>
         <br>
         <input type="submit" value="Submit" id="sub_but">
       </form>
