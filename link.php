@@ -7,7 +7,7 @@
     <title>Go to link? | Que</title>
     <link rel="icon" href="logo.png">
 </head>
-<body style="font-family: sans-serif;">
+<body style="font-family: sans-serif; background-color: rgb(17, 0, 31);">
 <center>
     <br>
     <img src="https://que.jacobdrath.co/logo.png" width="80px">
