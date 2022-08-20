@@ -1,4 +1,4 @@
-if (!(sessionStorage.ver=="1")) {
+if (!(localStorage.ver=="1")) {
   window.location.href="https://que.jacobdrath.co/human/"
 }
 

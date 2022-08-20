@@ -43,7 +43,7 @@ if (isJson($result)) {
     $manage = json_decode($result);
     if ($manage->success) {
         echo 'Success';
-        echo '<script>sessionStorage.setItem("ver", "1")</script>';
+        echo '<script>localStorage.setItem("ver", "1")</script>';
         echo '<script>window.location.href="https://que.jacobdrath.co"</script>';
     } else {
         echo 'Please try again';
