@@ -130,6 +130,9 @@ function getResponse(msg) {
     }, 200)
     return []
   }
+  else if (msg=="##forgetme") {
+    window.location.href="https://que.jacobdrath/human/reset.html"
+  }
   else if (msg=="thanks" || msg=="thank you" || msg=="thx") {
     newMsg("<center>How is your experience with Que? <a href=\"javascript:alert('Thanks for your feedback!')\">Good</a> <a href=\"javascript:alert('Thanks for your feedback!')\">Bad</a></center>", "alert")
     return [
