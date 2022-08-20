@@ -27,7 +27,12 @@
         <div id="bttm"></div>
         <div id="footer" style="max-width: 400px; padding-bottom: 15px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
             <div id="type" style="display: none;">
-                <p style="color: rgb(178, 0, 178);"><b>Thinking...</b></p>
+                <p class="in">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                </p>
+                <!--<p style="color: rgb(178, 0, 178);"><b>Thinking...</b></p>-->
             </div>
             <input id="txt" placeholder="Type Here" style="width: 300px;
             padding: 8px;
@@ -77,6 +82,14 @@
         border-radius: 10px;
         border-bottom-left-radius: 0px;
     }
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin-left: 3px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        }
     .out {
         display: flex;
         align-items: right;
