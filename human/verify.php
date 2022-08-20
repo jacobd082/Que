@@ -35,8 +35,8 @@ curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
 echo $result;
 if (str_starts_with(string $result, string '{ "success": true'): bool) {
-    echo 'Success!'
-    echo '<script>window.close()</script>'
+    echo 'Success!';
+    echo '<script>window.close()</script>';
 };
 ?>
 </body>
