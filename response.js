@@ -152,6 +152,12 @@ function getResponse(msg) {
       "If you need any help, just ask!"
     ]
   }
+  else if (msg.split(" ")[0]=="google") {
+    return [
+      "Sorry! As of now, I cannot Google things for you.",
+      "You can run your own google search&nbsp;<a href='https://google.com' target='_blank'>here</a>."
+    ]
+  }
   else {
     return [
       "Sorry, I'm not sure what you are asking me.",
