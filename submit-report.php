@@ -7,7 +7,7 @@ $url = 'https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI
 
 //The data you want to send via POST
 $fields = [
-    'q'      => $_POST['txt']
+    'q{rand()}'      => $_POST['txt']
 ];
 
 //url-ify the data for the POST
