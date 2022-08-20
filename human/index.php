@@ -24,6 +24,7 @@
       <input type="submit" value="Submit" id="sub_but">
     </form>
 </div>
+      <a href="https://stats.uptimerobot.com/XXPxmf4P2w" style="color: gray;">Status</a>
     </center>
   </body>
   <style>

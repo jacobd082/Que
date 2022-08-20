@@ -12,6 +12,7 @@
     <center>
       <img src="https://que.jacobdrath.co/logo.png" width="80px">
       <h1>Report an issue</h1>
+      <p>If this is a server issue, check our <a href="https://stats.uptimerobot.com/XXPxmf4P2w">status page</a>.</p>
       <form action="submit-report.php" method="post">
         <textarea id="txt" style="width: 400px; height: 200px;" name=txt placeholder="Type your issue here."></textarea>
         <br>
