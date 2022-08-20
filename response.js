@@ -73,7 +73,7 @@ function getResponse(msg) {
         "If you want to know what I can do, Ask me."
     ]
   }
-  else if (msg.startsWith("what is")) {
+  else if (msg.startsWith("what is") || msg.startsWith("who is")) {
     if (msg.split(" ").includes("a")) {
         url = msg.split(" ")[3]
     } else {
@@ -115,11 +115,11 @@ function getResponse(msg) {
         "If at any point you want to end the conversation, say \"Bye\"."
     ]
   }
-  else if ((msg.split(" ").includes("you") && msg.includes("oing")) || (msg == "whats up") || (msg == "what's up") || msg=="how are you") {
+  else if ((msg.split(" ").includes("you") && msg.includes("oing")) || (msg == "whats up") || (msg == "what's up") || msg=="how are you" || msg=="syscheck") {
     return [
         "I'm doing fine!",
         "Thanks for asking!",
-        "<img src='logo.png' width='50px'><b>All systems online</b>"
+        "<img src='logo.png' width='50px'><b>All systems online</b>   <a href=\"javascript:send('SYSCHECK')\">Check again</a>"
     ]
   }
   else if (msg == "##error") {
