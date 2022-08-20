@@ -5,7 +5,7 @@
   </head>
   <body>
     <h1>Please Verify</h1>
-    <form action="verify.php" method="POST">
+    <form action="human/verify.php" method="POST">
       <div class="g-recaptcha" data-sitekey="6LfB4ckfAAAAAJH3qOotGiFW1Munvvy_o9hC_8AU"></div>
       <br/>
       <input type="submit" value="Submit">
