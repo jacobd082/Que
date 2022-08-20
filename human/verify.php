@@ -39,11 +39,11 @@ curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 
 //execute post
 $result = curl_exec($ch);
-echo $result;
 if (isJson($result)) {
     $manage = json_decode($result);
     if ($manage->success) {
         echo 'Success';
+        echo '<script>window.location.href="https://que.jacobdrath.co"</script>';
     }
 }
 ?>
