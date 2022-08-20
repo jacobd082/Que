@@ -171,7 +171,7 @@ function getResponse(msg) {
 function handWX(w) {
         newMsg("I found your location to be "+w.loc, "in")
         newMsg("Here is your weather:", "in")
-        newMsg("<img src='http://openweathermap.org/img/wn/"+w.icon+"@2x.png' width='60px'>", "in")
+        newMsg("<img src='http://openweathermap.org/img/wn/"+w.icon+"@2x.png'>", "in")
         newMsg("The current condition is "+w.cond +". The current temperature is "+ w.temp + " fahrenheit.", "in")
         newMsg("<center>Was there an issue with your weather? <a href=\"javascript:alert('Thanks for your feedback!')\">Nope!</a> <a href=\"javascript:alert('Thanks for your feedback!')\">Yes</a></center>", "alert")
         document.body.scrollIntoView(0)
