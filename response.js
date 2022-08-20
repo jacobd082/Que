@@ -94,9 +94,9 @@ function getResponse(msg) {
                 //console.log(JSON.stringify(result[0]))
                 //console.log(JSON.stringify(result[0][1]))
                 if ((result[0][1].extract)==undefined) {
-                    handle("Sorry! Looks like I don't know anything about that!")
+                    handle("Sorry! Looks like I don't know anything about that!", "")
                 } else {
-                    handle(((result[0][1].extract)).replace(url.charAt(0).toUpperCase() + url.slice(1)+" may also refer to:", ""))
+                    handle(((result[0][1].extract)).replace(url.charAt(0).toUpperCase() + url.slice(1)+" may also refer to:", ""), url)
                 }
             });
             })
@@ -190,7 +190,7 @@ function handWX(w) {
         document.body.scrollIntoView(0)
 }
 
-function handle(txt) {
+function handle(txt, title) {
     newMsg(txt, "in")
     newMsg("<center>Source: <a href=\"https://wikipedia.org\">Wikipedia</a></center>", "alert")
     document.body.scrollIntoView(0)
