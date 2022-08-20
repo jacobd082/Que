@@ -1,3 +1,8 @@
+if (!(sessionStorage.ver=="1")) {
+  window.location.href="https://que.jacobdrath.co/human/"
+}
+
+
 function send(msg) {
     document.getElementById("txt").value=""
     newMsg(msg, "out")
