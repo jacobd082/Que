@@ -20,6 +20,12 @@ $fields = [
 //url-ify the data for the POST
 $fields_string = http_build_query($fields);
 
+
+function isJson($string) {
+    json_decode($string);
+    return json_last_error() === JSON_ERROR_NONE;
+ }
+
 //open connection
 $ch = curl_init();
 
@@ -34,10 +40,11 @@ curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 //execute post
 $result = curl_exec($ch);
 echo $result;
-$manage = json_decode($result)
-if ($manage.success) {
+if (isJson($result)) {
+    $manage = json_decode($result);
+    echo $manage.success
     echo 'Success!';
-};
+}
 ?>
 </body>
 </html>
