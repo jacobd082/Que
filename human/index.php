@@ -30,6 +30,8 @@
         font-family: 'Open Sans', sans-serif;
         }
         #sub_but {
+          font-size: 14px;
+          cursor: pointer;
           border: none;
           padding: 8px;
           border-radius: 10px;
