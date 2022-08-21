@@ -149,10 +149,14 @@ function getResponse(msg) {
     response.json().then(jsonData => {
         console.log(jsonData)
         jsonData = jsonData[0]
-        jsonData.meanings.forEach(item => {
-          defs += "<p class='in'><i>"+item.partOfSpeech+":</i>&nbsp;&nbsp;&nbsp;"+item.definitions[0].definition+"</p>"
-        })
-        newMsg("<b>"+jsonData.word+"</b>&nbsp;<span>"+jsonData.phonetic+"</span>"+defs, "in")
+        if (!(jsonData.meanings==undefined)) {
+          jsonData.meanings.forEach(item => {
+            defs += "<p class='in'><i>"+item.partOfSpeech+":</i>&nbsp;&nbsp;&nbsp;"+item.definitions[0].definition+"</p>"
+          })
+          newMsg("<b>"+jsonData.word+"</b>&nbsp;<span>"+jsonData.phonetic+"</span>"+defs, "in")
+        } else {
+          newMsg("I couldn't find a definition for that.")
+        }
     });
     })
     .catch(function(error) {
@@ -189,11 +193,16 @@ function getResponse(msg) {
     ]
   }
   else {
-    return [
-      "Sorry, I'm not sure what you are asking me.",
-      "Try to use simple words and to not be to specific.",
-      "Remember, I'm only in the Beta stages, and cannot do very much.",
-    ];
+    if (msg.split(" ").length==1) {
+      getResponse("define "+msg)
+      return []
+    } else {
+      return [
+        "Sorry, I'm not sure what you are asking me.",
+        "Try to use simple words and to not be to specific.",
+        "Remember, I'm only in the Beta stages, and cannot do very much.",
+      ];
+    }
   }
 }
 
