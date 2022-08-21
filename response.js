@@ -123,7 +123,7 @@ function getResponse(msg) {
     return [
         "I'm doing fine!",
         "Thanks for asking!",
-        "<img src='logo.png' width='50px'><b>All systems online</b>   <a href=\"javascript:send('SYSCHECK')\">Check again</a>"
+        "<img src='logo.png' width='50px'><b>All systems online</b>  &nbsp; <a href=\"javascript:send('SYSCHECK')\">Check again</a>&nbsp;<a href=\"https://stats.uptimerobot.com/XXPxmf4P2w\" style=\"color: gray;\">Status</a>"
     ]
   }
   else if (msg == "##error") {
