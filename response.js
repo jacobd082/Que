@@ -148,6 +148,7 @@ function getResponse(msg) {
     .then(function(response) {
       if (!response.ok) {
           newMsg("I couldn't find that.", "in") 
+          document.body.scrollIntoView(0)
       }
     response.json().then(jsonData => {
         console.log(jsonData)
@@ -157,9 +158,12 @@ function getResponse(msg) {
             defs += "<p class='in'><i>"+item.partOfSpeech+":</i>&nbsp;&nbsp;&nbsp;"+item.definitions[0].definition+"</p>"
           })
           newMsg("<b>"+jsonData.word+"</b>&nbsp;<span>"+jsonData.phonetic+"</span>"+defs, "in")
+          document.body.scrollIntoView(0)
         } else {
           newMsg("I couldn't find a definition for that.")
+          document.body.scrollIntoView(0)
         }
+        document.body.scrollIntoView(0)
     });
     })
     .catch(function(error) {
