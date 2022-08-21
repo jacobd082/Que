@@ -146,6 +146,9 @@ function getResponse(msg) {
     var defs = ""
     fetch('https://api.dictionaryapi.dev/api/v2/entries/en/'+word)
     .then(function(response) {
+      if (!response.ok) {
+          newMsg("I couldn't find that.", "in") 
+      }
     response.json().then(jsonData => {
         console.log(jsonData)
         jsonData = jsonData[0]
