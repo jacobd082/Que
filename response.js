@@ -148,9 +148,9 @@ function getResponse(msg) {
     response.json().then(jsonData => {
         console.log(jsonData)
         jsonData.meanings.forEach(item => {
-          defs += "<i>"+item.partOfSpeech+"</i>&nbsp;"+item.definitions[0].definition+"<br>"
+          defs += "<p><i>"+item.partOfSpeech+"</i>&nbsp;"+item.definitions[0].definition+"</p>"
         })
-        newMsg("<b>"+jsonData.word+"</b>&nbsp;<span>"+jsonData.phonetic+"</span><br>"+defs, "in")
+        newMsg("<b>"+jsonData.word+"</b>&nbsp;<span>"+jsonData.phonetic+"</span>"+defs, "in")
     });
     })
     .catch(function(error) {
