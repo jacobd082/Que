@@ -149,7 +149,7 @@ function getResponse(msg) {
         console.log(jsonData)
         jsonData = jsonData[0]
         jsonData.meanings.forEach(item => {
-          defs += "<p><i>"+item.partOfSpeech+"</i>&nbsp;"+item.definitions[0].definition+"</p>"
+          defs += "<p class='in'><i>"+item.partOfSpeech+"</i>&nbsp;"+item.definitions[0].definition+"</p>"
         })
         newMsg("<b>"+jsonData.word+"</b>&nbsp;<span>"+jsonData.phonetic+"</span>"+defs, "in")
     });
