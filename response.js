@@ -147,6 +147,7 @@ function getResponse(msg) {
     .then(function(response) {
     response.json().then(jsonData => {
         console.log(jsonData)
+        jsonData = jsonData[0]
         jsonData.meanings.forEach(item => {
           defs += "<i>"+item.partOfSpeech+"</i>&nbsp;"+item.definitions[0].definition+"<br>"
         })
