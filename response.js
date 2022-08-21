@@ -3,7 +3,7 @@ function after(b, a) {
 }
 
 function getResponse(msg) {
-  fetch("print.php?txt="+msg)
+  //fetch("print.php?txt="+msg)
   msg = msg.replace("?", "")
   msg = msg.replace("!", "")
   msg = msg.replace(".", "")
