@@ -140,6 +140,24 @@ function getResponse(msg) {
       "Your welcome!"
     ]
   }
+  else if (msg.startsWith("define")) {
+    var word = after(" ", msg)
+    var defs = ""
+    fetch('https://api.dictionaryapi.dev/api/v2/entries/en/'+word)
+    .then(function(response) {
+    response.json().then(jsonData => {
+        console.log(jsonData)
+        jsonData.meanings.forEach(item => {
+          defs += "<i>"+item.partOfSpeech+"</i>&nbsp;"+jsonData.meanings.definitions[0].definition+"<br>"
+        })
+        newMsg("<b>"+jsonData.word+"</b>&nbsp;<span>"+jsonData.phonetic+"</span><br>"+defs, "in")
+    });
+    })
+    .catch(function(error) {
+    alert(error)
+    });
+    return []
+  }
   else if (msg == "que") {
     return [
       "Thant's me!",
