@@ -14,7 +14,8 @@ function getResponse(msg) {
         "Hello there! I'm Que!",
         "I'm an AI assistant made to help you!",
         "Try asking me:<br>What\'s the weather?",
-        "Or: What is a pineapple?"
+        "Or: What is a pineapple?",
+        "Or: Define Apple."
       ];
     } else {
       return getResponse(after(" ", msg));
