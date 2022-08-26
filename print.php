@@ -1,14 +1,17 @@
 <?php
 
-print $_GET['txt'];
-$myfile = fopen("log.txt", "w+") or die("Unable to open file!");
+$file = 'log.txt';
 
-$txt = fread($myfile,filesize("log.txt"));
-$numtxt = (int)$txt;
-$newnum = $numtxt + 1;
-echo $newnum;
-fwrite($myfile, $newnum);
-fclose($myfile);
+// default the counter value to 1
+$counter = 1;
+
+// add the previous counter value if the file exists    
+if (file_exists($file)) {
+    $counter += file_get_contents($file);
+}
+
+// write the new counter value to the file
+file_put_contents($file, $counter);
 /*
 print $_GET['txt'];
 
