@@ -199,6 +199,15 @@ function getResponse(msg) {
       "You can run your own google search&nbsp;<a href=\"https://google.com/search?q="+after(" ", msg)+"\" target='_blank'>here</a>."
     ]
   }
+  else if (msg.startsWith("how many answers ")) {
+    fetch('https://que.jacobdrath.co/log.txt')
+    .then(function(response) {
+      response.text().then(function(text) {
+        newMsg(text, "in")
+      });
+    })
+    return ["One moment..."]
+  }
   else if (msg=="") {
     return []
   }
