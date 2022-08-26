@@ -6,6 +6,7 @@ if (!(localStorage.ver=="1")) {
 
 
 function send(msg) {
+  fetch("print.php")
     document.getElementById("txt").value=""
     newMsg(msg, "out")
     type(true)

@@ -24,6 +24,26 @@
       <input type="submit" value="Submit" id="sub_but">
     </form>
 </div>
+
+      <p style="color: white;">Que has responded to <b id="num"><img src="/load.gif" width="20px"></b> questions.</p>
+      <script>
+            var url = 'https://que.jacobdrath.co/log.txt';
+var storedText;
+
+fetch(url)
+  .then(function(response) {
+    response.text().then(function(text) {
+      storedText = text;
+      done();
+    });
+  });
+
+function done() {
+    document.getElementById("num").innerHTML=storedText
+}
+
+      </script>
+      
       <a href="https://stats.uptimerobot.com/XXPxmf4P2w" style="color: gray;">Status</a>&nbsp;<a href="https://que.jacobdrath.co/pages/security.html" style="color: gray;">Security</a>&nbsp;<a href="https://que.jacobdrath.co/pages/providers.html" style="color: gray;">Our providers</a>
     </center>
   </body>
