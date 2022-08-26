@@ -211,6 +211,11 @@ function getResponse(msg) {
   else if (msg=="") {
     return []
   }
+  else if (msg=="status") {
+    return [
+      "Here is our status page: <a href='https://stats.uptimerobot.com/XXPxmf4P2w' target='_blank'>here</a>"
+    ]
+  }
   else {
     if (msg.split(" ").length==1) {
       getResponse("define "+msg)
