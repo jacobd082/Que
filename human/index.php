@@ -44,8 +44,7 @@ function done() {
 
       </script>
       
-      <a href="https://stats.uptimerobot.com/XXPxmf4P2w" style="color: gray;">Status</a>&nbsp;<a href="https://que.jacobdrath.co/pages/security.html" style="color: gray;">Security</a>&nbsp;<a href="https://que.jacobdrath.co/pages/providers.html" style="color: gray;">Our providers</a>
-    &nbsp;<a href="https://que.jacobdrath.co/pages/policy.html" style="color: gray;">Privacy Policy</a>
+      <a href="https://stats.uptimerobot.com/XXPxmf4P2w" style="color: gray;">Status</a>&nbsp;<a href="https://que.jacobdrath.co/pages/security.html" style="color: gray;">Security</a>&nbsp;<a href="https://que.jacobdrath.co/pages/providers.html" style="color: gray;">Our providers</a>&nbsp;<a href="https://que.jacobdrath.co/pages/policy.html" style="color: gray;">Privacy Policy</a>
     </center>
   </body>
   <style>
