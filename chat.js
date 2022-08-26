@@ -8,16 +8,22 @@ if (!(localStorage.ver=="1")) {
 function send(msg) {
     document.getElementById("txt").value=""
     newMsg(msg, "out")
-    type(true)
-    document.body.scrollIntoView(0)
-    setTimeout(() => {
-        re = getResponse(msg)
-        re.forEach(text => {
-            newMsg(text, "in")
-        })
-        type(false)
-        document.body.scrollIntoView(0)
-    }, 2000);
+    if (navigator.onLine) {
+      type(true)
+      document.body.scrollIntoView(0)
+      setTimeout(() => {
+          re = getResponse(msg)
+          re.forEach(text => {
+              newMsg(text, "in")
+          })
+          type(false)
+          document.body.scrollIntoView(0)
+      }, 2000);
+    } else {
+      newMsg("Looks like you are offline. Try again when you are online.", "in")
+      document.body.scrollIntoView(0)
+      sat("error")
+    }
 }
 
 
