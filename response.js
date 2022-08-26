@@ -199,6 +199,9 @@ function getResponse(msg) {
       "You can run your own google search&nbsp;<a href=\"https://google.com/search?q="+after(" ", msg)+"\" target='_blank'>here</a>."
     ]
   }
+  else if (msg=="") {
+    return []
+  }
   else {
     if (msg.split(" ").length==1) {
       getResponse("define "+msg)
