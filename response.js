@@ -258,7 +258,7 @@ function getResponse(msg) {
       expr+"="
     ]
   }
-  else if ((msg.split(" ").length==1) && (msg.includes("*") || msg.includes("+") || msg.includes("-") || msg.includes("/"))) {
+  else if ((msg.includes("*") || msg.includes("+") || msg.includes("-") || msg.includes("/"))) {
     var expr = msg
     var urlexpr = expr.replaceAll("+", "%2B")
     var url = 'https://api.mathjs.org/v4/?expr='+urlexpr;
