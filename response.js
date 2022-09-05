@@ -116,6 +116,7 @@ function getResponse(msg) {
         "I can tell you the weather!",
         "I can have a basic conversation!",
         "I can do research for you!",
+        "I can do math!",
         "If at any point you want to end the conversation, say \"Bye\"."
     ]
   }
@@ -210,6 +211,71 @@ function getResponse(msg) {
   }
   else if (msg=="") {
     return []
+  }
+  else if (msg.endsWith("=")) {
+    var expr = msg.split("=")[0]
+    var urlexpr = expr.replaceAll("+", "%2B")
+    var urlexpr = urlexpr.replaceAll("x", "*")
+    var url = 'https://api.mathjs.org/v4/?expr='+urlexpr;
+    var storedText;
+    
+    fetch(url)
+      .then(function(response) {
+        response.text().then(function(text) {
+          storedText = text;
+          done();
+        });
+      });
+    
+    function done() {
+      newMsg(storedText, "mathin")
+    }
+    return [
+      expr+"="
+    ]
+  }
+  else if (msg.startsWith("solve")) {
+    var expr = after(" ", msg)
+    var urlexpr = expr.replaceAll("+", "%2B")
+    var urlexpr = urlexpr.replaceAll("x", "*")
+    var url = 'https://api.mathjs.org/v4/?expr='+urlexpr;
+    var storedText;
+    
+    fetch(url)
+      .then(function(response) {
+        response.text().then(function(text) {
+          storedText = text;
+          done();
+        });
+      });
+    
+    function done() {
+      newMsg(storedText, "mathin")
+    }
+    return [
+      expr+"="
+    ]
+  }
+  else if ((msg.split(" ").length==1) && (msg.includes("*") || msg.includes("+") || msg.includes("-") || msg.includes("/"))) {
+    var expr = msg
+    var urlexpr = expr.replaceAll("+", "%2B")
+    var url = 'https://api.mathjs.org/v4/?expr='+urlexpr;
+    var storedText;
+    
+    fetch(url)
+      .then(function(response) {
+        response.text().then(function(text) {
+          storedText = text;
+          done();
+        });
+      });
+    
+    function done() {
+      newMsg(storedText, "mathin")
+    }
+    return [
+      expr+"="
+    ]
   }
   else {
     if (msg.split(" ").length==1) {

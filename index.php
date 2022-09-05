@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
     <link rel="icon" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
 </head>
@@ -58,7 +59,7 @@
     <script src="response.js"></script>
     <script src="chat.js"></script>
     <?php
-if ($_GET['q']=="") {
+if (@$_GET['q']=="") {
   
 } else {
   echo "<script>send('" . $_GET['q'] . "')</script>";
@@ -89,6 +90,18 @@ if ($_GET['q']=="") {
         width: fit-content;
         border-radius: 10px;
         border-bottom-left-radius: 0px;
+    }
+    .mathin {
+        display: flex;
+        align-items: left;
+        align-content: left;
+        padding: 8px;
+        background-color: rgba(221, 221, 221, 0.2);
+        width: fit-content;
+        border-radius: 10px;
+        border-bottom-left-radius: 0px;
+        font-family: 'Merriweather', serif;
+        font-size: xx-large;
     }
     .dot {
         height: 15px;
