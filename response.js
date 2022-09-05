@@ -229,6 +229,7 @@ function getResponse(msg) {
     
     function done() {
       newMsg(storedText, "mathin")
+      document.body.scrollIntoView(0)
     }
     return [
       expr+"="
@@ -251,6 +252,7 @@ function getResponse(msg) {
     
     function done() {
       newMsg(storedText, "mathin")
+      document.body.scrollIntoView(0)
     }
     return [
       expr+"="
@@ -272,6 +274,7 @@ function getResponse(msg) {
     
     function done() {
       newMsg(storedText, "mathin")
+      document.body.scrollIntoView(0)
     }
     return [
       expr+"="
