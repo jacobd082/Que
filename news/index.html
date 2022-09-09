@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que News</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png">
+</head>
+<body>
+    <h1><a href="https://que.jacobdrath.co"><img src="/logo.png" width="28px"></a> News</h1>
+    <p>Top news from the world</p>
+    <div style="background-color: gray; height: 4px;"></div>
+    <div id="news"></div>
+    <p>Source via NYT</p>
+    <script>
+        document.getElementById("news").innerHTML=("<p>Loading...</p>")
+        fetch('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=PqQPyzANt1BoUfEHOGGDwAzIALMUssli')
+            .then((response) => response.json())
+            .then((data) => handleData(data));
+
+        function handleData(e) {
+            console.log(e.results)
+            document.getElementById("news").innerHTML=("")
+            e.results.forEach(item => {
+                document.getElementById("news").innerHTML += '<a href="viewproxy.php?url='+item.short_url+'" target="_blank" style="color: inherit; text-decoration: none;"><div style="background: rgba(255, 255, 255, 0.1); padding: 5px; margin-bottom: 10px; cursor: pointer; border-radius: 3px;><p style="width: fit-content; background-color: gray; border-radius: 3px;">'+item.section+' <i>'+item.subsection+'</i></p><b>'+item.title+'</b><p>'+item.abstract+'</p></div></a>'
+            })
+        }
+
+    </script>
+</body>
+<style>
+    body {
+        background-color: rgb(17, 0, 31);
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+    }
+</style>
+</html>

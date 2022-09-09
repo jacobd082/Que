@@ -24,6 +24,7 @@
             <p class="in">Welcome to Que!</p>
             <p class="in">Just a reminder that Que is still in beta, and some things may need fixing.</p>
             <p class="in">If you need any help, Just ask!</p>
+            <p class="in">Check out&nbsp;<a href="news/" style="color: white;">Que News</a>!</p>
         </div>
         <br><br><br><br>
         <div id="bttm"></div>
