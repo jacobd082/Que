@@ -22,9 +22,8 @@
         <div id="chat">
             <p class="in"><img src="logo.png" width="100px"></p>
             <p class="in">Welcome to Que!</p>
-            <p class="in">Just a reminder that Que is still in beta, and some things may need fixing.</p>
-            <p class="in">If you need any help, Just ask!</p>
-            <p class="in">Check out&nbsp;<a href="news/" style="color: white;">Que News</a>!</p>
+            <p class="in">Top articles on&nbsp;<a href="news/" style="color: white;">Que News</a>:</p>
+            <div id="news"></div>
         </div>
         <br><br><br><br>
         <div id="bttm"></div>
@@ -59,6 +58,24 @@
     <script src="status.js"></script>
     <script src="response.js"></script>
     <script src="chat.js"></script>
+    <script>
+        document.getElementById("news").innerHTML=("<p>Loading...</p>")
+        fetch('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=PqQPyzANt1BoUfEHOGGDwAzIALMUssli')
+            .then((response) => response.json())
+            .then((data) => handleData(data));
+
+        function handleData(e) {
+            console.log(e.results)
+            document.getElementById("news").innerHTML=("")
+            item = e.results[0]
+            newMsg('<a href="news/viewproxy.php?url='+item.short_url+'" target="_blank" style="color: white; text-decoration: none;"><b>'+item.title+'</b></a><br><br>', "in")
+            item = e.results[1]
+            newMsg('<a href="news/viewproxy.php?url='+item.short_url+'" target="_blank" style="color: white; text-decoration: none;"><b>'+item.title+'</b></a><br><br>', "in")
+            item = e.results[2]
+            newMsg('<a href="news/viewproxy.php?url='+item.short_url+'" target="_blank" style="color: white; text-decoration: none;"><b>'+item.title+'</b></a><br><br>', "in")
+        }
+
+    </script>
     <?php
 if (@$_GET['q']=="") {
   
