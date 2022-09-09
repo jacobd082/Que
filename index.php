@@ -68,11 +68,12 @@
             console.log(e.results)
             document.getElementById("news").innerHTML=("")
             item = e.results[0]
-            newMsg('<a href="news/viewproxy.php?url='+item.short_url+'" target="_blank" style="color: white; text-decoration: none;"><b>'+item.title+'</b></a><br><br>', "in")
+            console.log(item.short_url)
+            newMsg('<a href="news/viewproxy.php?url='+item.short_url+'" target="_blank" style="color: white; text-decoration: none;"><b>'+item.title+'</b></a><br><br>', "in", true)
             item = e.results[1]
-            newMsg('<a href="news/viewproxy.php?url='+item.short_url+'" target="_blank" style="color: white; text-decoration: none;"><b>'+item.title+'</b></a><br><br>', "in")
+            newMsg('<a href="news/viewproxy.php?url='+item.short_url+'" target="_blank" style="color: white; text-decoration: none;"><b>'+item.title+'</b></a><br><br>', "in", true)
             item = e.results[2]
-            newMsg('<a href="news/viewproxy.php?url='+item.short_url+'" target="_blank" style="color: white; text-decoration: none;"><b>'+item.title+'</b></a><br><br>', "in")
+            newMsg('<a href="news/viewproxy.php?url='+item.short_url+'" target="_blank" style="color: white; text-decoration: none;"><b>'+item.title+'</b></a><br><br>', "in", true)
         }
 
     </script>

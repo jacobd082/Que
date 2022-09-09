@@ -38,10 +38,12 @@ function send(msg) {
 
 
 
-function newMsg(txt, cssclass) {
+function newMsg(txt, cssclass, news = false) {
     if (txt.includes("https://")) {
-      if (!txt.includes("img")) {
-        txt = txt.replace("https://", "link.php?url=https://")
+      if (!(news)) {
+        if (!txt.includes("img")) {
+          txt = txt.replace("https://", "link.php?url=https://")
+        }
       }
     }
     document.getElementById("chat").innerHTML += "<p class="+cssclass+">"+txt+"</p>"
