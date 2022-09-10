@@ -13,7 +13,7 @@
 </head>
 <div>
     <h1><a href="https://que.jacobdrath.co"><img src="/logo.png" width="28px"></a> News</h1>
-    <p>Search Results</p>
+    <p>Search Results for "<i><?php echo $_GET['q'] ?></i>"</p>
     <div style="background-color: gray; height: 4px;"></div>
     <div id="news"></div>
     <p>Source via NYT</p>
