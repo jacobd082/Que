@@ -6,7 +6,9 @@ function getResponse(msg) {
   //fetch("print.php?txt="+msg)
   msg = msg.replace("?", "")
   msg = msg.replace("!", "")
-  msg = msg.replace(".", "")
+  if (!((msg.includes("*") || msg.includes("+") || msg.includes("-") || msg.includes("/")))) {
+    msg = msg.replace(".", "")
+  }
   msg = msg.toLowerCase();
   if (msg.split(" ").includes("hi") || msg.split(" ").includes("hello")) {
     if (msg.split(" ").length < 4) {
