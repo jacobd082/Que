@@ -16,7 +16,7 @@
     <p>Top news from the world</p>
     <form action="search.php" method="get">
         <input id="q" name="q" placeholder="Search Que News...">
-        <input type="submit">
+        <input type="submit" value="Search">
     </form>
     <div style="background-color: gray; height: 4px;"></div>
     <div id="news"></div>
@@ -75,6 +75,9 @@
                             document.getElementById("num").innerHTML=storedText
                         }
 
+                }
+                if (index==15) {
+                    document.getElementById("news").innerHTML += '<form action="search.php" method="get"><input id="q" name="q" placeholder="Search Que News..."><input type="submit" value="Search"></form>'
                 }
             })
         }
