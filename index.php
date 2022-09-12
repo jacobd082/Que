@@ -42,12 +42,15 @@
                 </p>
                 <!--<p style="color: rgb(178, 0, 178);"><b>Thinking...</b></p>-->
             </div>
-            <input id="txt" placeholder="Type Here" style="width: 300px;
+            <input id="txt" placeholder="Type Here (Press &uarr; for last message)" style="width: 300px;
             padding: 8px;
             border: none;
             color: white;
             background-color: rgba(221, 221, 221, 0.2);
-            border-radius: 70px;">
+            border-radius: 70px;"
+            maxlength="200"
+            type="text"
+            >
             <button style="
             padding: 8px;
             border: none;
@@ -57,6 +60,7 @@
             background: linear-gradient(90deg, rgba(178,82,245,1) 0%, rgba(112,62,222,1) 35%, rgba(0,212,255,1) 100%);
             "
             onclick="send(document.getElementById('txt').value)"
+            id="sendbut"
             >Send</button>
         </div>
     </div>

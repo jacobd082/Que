@@ -6,6 +6,7 @@ if (!(localStorage.ver=="1")) {
 
 
 function send(msg) {
+  sessionStorage.setItem("lastMsg", msg)
   fetch("print.php")
     document.getElementById("txt").value=""
     newMsg(msg, "out")
@@ -54,12 +55,25 @@ function newMsg(txt, cssclass, news = false) {
 var input = document.getElementById("txt");
 
 // Execute a function when the user presses a key on the keyboard
-input.addEventListener("keypress", function(event) {
+input.addEventListener("keyup", function(event) {
   // If the user presses the "Enter" key on the keyboard
+  //console.log(event)
   if (event.key === "Enter") {
     // Cancel the default action, if needed
     event.preventDefault();
     send(document.getElementById('txt').value)
+  }
+  if (event.key=="ArrowUp") {
+    input.value=sessionStorage.getItem("lastMsg")
+  }
+  if (event.key=="ArrowDown") {
+    sessionStorage.setItem("lastMsg", input.value)
+    input.value=""
+  }
+  if (input.value.length>199) {
+    input.style.background="red"
+  } else {
+    input.style.background="rgba(221, 221, 221, 0.2)"
   }
 });
 
