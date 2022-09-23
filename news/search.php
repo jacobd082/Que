@@ -16,7 +16,7 @@
     <p>Search Results for "<i><?php echo $_GET['q'] ?></i>"</p>
     <div style="background-color: gray; height: 4px;"></div>
     <div id="news"></div>
-    <p>Source via NYT</p>
+    <p>Source via NYT & The Guardian</p>
     <div id="footer" style="max-width: 400px; padding-bottom: 15px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
         <form action="https://que.jacobdrath.co" method="get">
             <input id="q" name="q" placeholder="Ask a question" style="width: 300px;
@@ -51,7 +51,16 @@
             console.log(e)
             document.getElementById("news").innerHTML=("")
             e.response.docs.forEach(item => {
-                document.getElementById("news").innerHTML += '<a href="viewproxy.php?url='+item.web_url+'" target="_blank" style="color: inherit; text-decoration: none;"><div style="background: rgba(255, 255, 255, 0.1); padding: 5px; margin-bottom: 10px; cursor: pointer; border-radius: 3px;><p style="width: fit-content; background-color: gray; border-radius: 3px;">'+item.section_name+'</p><b>'+item.headline.main+'</b><p>'+item.abstract+'</p></div></a>'
+                document.getElementById("news").innerHTML += '<a href="viewproxy.php?url='+item.web_url+'" target="_blank" style="color: inherit; text-decoration: none;"><div style="background: rgba(255, 255, 255, 0.1); padding: 5px; margin-bottom: 10px; cursor: pointer; border-radius: 3px;><p style="width: fit-content; background-color: gray; border-radius: 3px;"><b>NYT</b> '+item.section_name+'</p><b>'+item.headline.main+'</b><p>'+item.abstract+'</p></div></a>'
+            })
+            fetch('https://content.guardianapis.com/search?q='+after("=", window.location.href)+'%20news&api-key=test')
+            .then((response) => response.json())
+            .then((data) => handleDataGUARD(data));
+        }
+        function handleDataGUARD(e) {
+            console.log(e.response.results)
+            e.response.results.forEach(item => {
+                document.getElementById("news").innerHTML += '<a href="viewproxy.php?url='+item.webUrl+'" target="_blank" style="color: inherit; text-decoration: none;"><div style="background: rgba(255, 255, 255, 0.1); padding: 5px; margin-bottom: 10px; cursor: pointer; border-radius: 3px;><p style="width: fit-content; background-color: gray; border-radius: 3px;"><b>GUARD</b> '+item.sectionName+'</p><b>'+item.webTitle+'</b></div></a>'
             })
         }
 

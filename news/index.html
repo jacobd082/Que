@@ -20,7 +20,7 @@
     </form>
     <div style="background-color: gray; height: 4px;"></div>
     <div id="news"></div>
-    <p>Source via NYT</p>
+    <p>Source via NYT & The Guardian</p>
     <div id="footer" style="max-width: 400px; padding-bottom: 15px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
         <form action="https://que.jacobdrath.co" method="get">
             <input id="q" name="q" placeholder="Ask a question" style="width: 300px;
@@ -56,9 +56,6 @@
                 }
                 document.getElementById("news").innerHTML += '<a href="viewproxy.php?url='+item.short_url+'" target="_blank" style="color: inherit; text-decoration: none;"><div style="background: rgba(255, 255, 255, 0.1); padding: 5px; margin-bottom: 10px; cursor: pointer; border-radius: 3px;><p style="width: fit-content; background-color: gray; border-radius: 3px;">'+item.section+' <i>'+item.subsection+'</i></p><b>'+item.title+'</b><p>'+item.abstract+'</p></div></a>'
                 if (index==5) {
-                    document.getElementById("news").innerHTML += '<h3>Trending on Que:</h3><h4><a href="search.php?q=Queen">Queen Elizabeth II 👑</a>, <a href="search.php?q=Ukraine">Ukraine 🇺🇦</a>, <a href="search.php?q=9/11">Remembering 9/11 🕘</a>, <a href="search.php?q=Biden">President Biden 🇺🇸</a></h4>'
-                }
-                if (index==9) {
                     document.getElementById("news").innerHTML += '<h3>Find by category:</h3><h4><a href="topic.php?q=arts">Art 🎨</a>, <a href="topic.php?q=automobiles">Automobiles 🚗</a>, <a href="topic.php?q=books">Books 📚</a>, <a href="topic.php?q=business">Business 🏢</a>, <a href="topic.php?q=food">Food 🌭</a>, <a href="topic.php?q=movies">Movies 🎬</a>, <a href="topic.php?q=obituaries">Obituaries 🪦</a>, <a href="topic.php?q=politics">Politics 💭</a>, <a href="topic.php?q=science">Science 🔬</a>, <a href="topic.php?q=sports">Sports ⚽️</a>, <a href="topic.php?q=technology">Technology 📱</a>, <a href="topic.php?q=theater">Theater 🎭</a>, <a href="topic.php?q=travel">Travel ✈️</a>, <a href="topic.php?q=us">U.S. 🇺🇸</a>, <a href="topic.php?q=world">World 🌍</a></h4>'
                 }
                 if (index==12) {
